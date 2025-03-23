@@ -46,3 +46,15 @@ function sendEmailNotification(email) {
     .then(() => alert('Email sent to your accountability partner.'))
     .catch(error => console.error('Error sending email:', error));
 }
+
+function getUserName() {
+  fetch('https://canvas.instructure.com/api/v1/users/self/profile', options)
+    .then(response => response.json())
+    .then(data => {
+      const userName = data.name;
+      localStorage.setItem('userName', userName); // Store it for later use
+    })
+    .catch(error => console.error('Error fetching user name:', error));
+}
+
+getUserName();
