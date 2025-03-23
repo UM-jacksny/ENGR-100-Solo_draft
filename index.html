@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canvas Assignment Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Canvas Assignment Timer</h1>
+
+  <label for="token">Canvas Access Token:</label>
+  <input type="text" id="token" placeholder="Enter your Canvas API token" />
+
+  <label for="course">Select Course:</label>
+  <select id="course" disabled></select>
+
+  <label for="assignment">Select Assignment:</label>
+  <select id="assignment" disabled></select>
+
+  <label for="time">Set Timer (in minutes):</label>
+  <input type="number" id="time" min="1" placeholder="Enter time in minutes" />
+
+  <label for="email">Accountability Partner Email:</label>
+  <input type="email" id="email" placeholder="Enter email address" />
+
+  <button id="start">Start Timer</button>
+
+  <script src="canvas.js"></script>
+  <script src="timer.js"></script>
+</body>
+</html>
