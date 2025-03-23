@@ -20,7 +20,7 @@ app.post('/send-email', (req, res) => {
     from: 'your-email@gmail.com',
     to: email,
     subject: 'Assignment Not Submitted on Time',
-    text: 'Your friend did not submit their assignment on time. Maybe give them a little nudge!'
+    text: 'Hi,\n\nYour friend ${name} did not submit their assignment on time. Maybe give them a little nudge!\n\nBest,\nCanvas Assignment Timer'
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
