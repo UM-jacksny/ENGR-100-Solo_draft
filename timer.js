@@ -38,14 +38,17 @@ function checkSubmission(assignmentId, email) {
 }
 
 function sendEmailNotification(email) {
+  const name = localStorage.getItem('userName');
+  
   fetch('/send-email', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email })
+    body: JSON.stringify({ email, name })
   })
-    .then(() => alert('Email sent to your accountability partner.'))
-    .catch(error => console.error('Error sending email:', error));
+  .then(() => alert('Email sent to your accountability partner.'))
+  .catch(error => console.error('Error sending email:', error));
 }
+
 
 function getUserName() {
   fetch('https://canvas.instructure.com/api/v1/users/self/profile', options)
